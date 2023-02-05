@@ -37,7 +37,6 @@ async function fetchMovies(url) {
   try {
     const res = await fetch(url);
     const resdata = await res.json();
-    console.log(resdata);
 
     createMovieItems(resdata.results);
   } catch (err) {
@@ -78,8 +77,23 @@ function fetchPrevMovies() {
   fetchMovies(API_URL + pagenumber);
 }
 
+function handleFilter(e) {
+  let val = e.target.value.toLowerCase();
+
+  Array.from(movie_container.childNodes).forEach(function (item) {
+    let itemName = item.dataset.title;
+
+    if (itemName.toLowerCase().indexOf(val) != -1) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
 // events
 searchForm.addEventListener("submit", handleSearch);
+searchInput.addEventListener("input", handleFilter);
 nextBtn.addEventListener("click", fetchNextMovies);
 prvBtn.addEventListener("click", fetchPrevMovies);
 window.addEventListener("load", () => {

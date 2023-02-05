@@ -56,16 +56,14 @@ body {
   gap: 3rem;
 }
 
-.overview {
+.overview { 
   transform: translateY(250px);
-  transition: 0.8s;
+  transition: 0.8s ;
 }
-
-.movie-info {
+.movie-info { 
   transform: translateX(-100%);
   transition: 0.6s;
 }
-
 .movie {
   width: 300px;
   height: 45vh;
@@ -75,17 +73,17 @@ body {
   border-radius: 16px;
   text-align: center;
   transition: all 0.5s ease 0s;
-}
-.movie:hover {
-  height: 69vh;
-}
-.movie:hover .overview {
-  transform: translateY(0);
-  transition: 0.6s ease-out;
-}
-.movie:hover .movie-info {
-  transform: translateX(0);
-  transition: 0.6s ease-out;
+  &:hover { 
+      height: 69vh;
+      .overview { 
+        transform: translateY(0);
+        transition: 0.6s ease-out;
+      }
+    .movie-info { 
+      transform: translateX(0);
+      transition: 0.6s ease-out;
+    }
+  }
 }
 
 .movie img {
@@ -114,4 +112,5 @@ body {
   width: 100%;
   height: 462px;
   overflow: hidden;
-}/*# sourceMappingURL=style.css.map */
+}
+

@@ -1,45 +1,31 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/8934fc592d.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/8934fc592d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="container">
-         <div class="box-flex">
-            
-                <form >
-            <input type="search" id="search" >
+      <div class="box-flex">
+        <form id="search-form">
+          <input type="search" id="search" />
         </form>
-
-                
-            
-         </div>
-         <main>
-             <div class="movies"></div>
-         </main>
-         <button id="previous">
-            <-
-        </button>
-
-         <button id="next">
-            ->
-         </button>
-
+      </div>
+      <main>
+        <div class="movies" id="movies"></div>
+      </main>
+      <button id="previous"><-</button>
+      <button id="next">-></button>
     </div>
 
-
-
-
-
-
-    <script src="./app.js"></script> 
-</body>
+    <script src="./public/js/app.js"></script>
+  </body>
 </html>

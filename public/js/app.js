@@ -4,6 +4,16 @@ const searchInput = document.getElementById("search");
 const nextBtn = document.getElementById("next");
 const prvBtn = document.getElementById("previous");
 
+const addDiv = document.getElementById('app')
+const loaderDiv = document.getElementById('loader')
+
+function showLoader() { 
+  loaderDiv.classList.add('show')
+}
+function hideLoader(){ 
+  loaderDiv.classList.remove("show")
+}
+
 const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=`;
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
@@ -35,10 +45,12 @@ function createMovieItems(movies) {
 
 async function fetchMovies(url) {
   try {
+    showLoader();
     const res = await fetch(url);
     const resdata = await res.json();
 
     createMovieItems(resdata.results);
+    hideLoader();
   } catch (err) {
     console.error(err);
   }

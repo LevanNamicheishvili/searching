@@ -44,8 +44,8 @@ function createMovieItems(movies) {
 }
 
 async function fetchMovies(url) {
+  showLoader();
   try {
-    showLoader();
     const res = await fetch(url);
     const resdata = await res.json();
 
